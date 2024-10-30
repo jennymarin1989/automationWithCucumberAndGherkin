@@ -17,7 +17,8 @@ Given('I check that url {string} the endpoint {string}', (checkUrl, url) => {
   commonPage.checkUrlContent(checkUrl, url);
 });
 
-When('I type in the input {string} the invalid value {string}', (inputElement, inputValue) => {
+//  ESte es un step genérico para meter un value en un input no debería de llevar lo de "invalid" se lo quito
+When('I type in the input {string} the value {string}', (inputElement, inputValue) => {
   commonPage.setInputValue(inputElement, inputValue);
 });
 

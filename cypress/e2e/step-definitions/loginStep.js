@@ -28,3 +28,15 @@ Given('I can see an error message when logging in with incorrect credentials', (
   loginPage.clickOnButton('login-button');
   loginPage.getAMessage('error', incorrectCredentialsText);
 });
+
+//Este step es útil para meter en el background de tests que no sean de login (Como los de main page, cart...)
+Given('I log in with valid credentials', () => {
+  loginPage.setInputValue('username', 'standard_user');
+  loginPage.setInputValue('password', 'secret_sauce');
+  loginPage.checkInputValue('username', 'standard_user');
+  loginPage.checkInputValue('password', 'secret_sauce');
+  loginPage.clickOnButton('login-button');
+  loginPage.checkUrlContent('include', 'inventory');
+});
+
+
